@@ -1,4 +1,4 @@
-package Clinic;
+package Clinica;
 
 public class Dog extends Pet {
 

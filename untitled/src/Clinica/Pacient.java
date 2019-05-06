@@ -1,10 +1,21 @@
-package Clinic;
+package Clinica;
 
 public class Pacient extends Human{
 
         public Pet pet;
         public String numCard;
         public String adress;
+
+    public Pacient(String name, Integer age, String sex) {
+        super(name, age, sex);
+    }
+
+    public Pacient(String name, Integer age, String sex, Pet pet, String numCard, String adress) {
+        super(name, age, sex);
+        this.pet = pet;
+        this.numCard = numCard;
+        this.adress = adress;
+    }
 
     public Pet getPet() {
         return pet;

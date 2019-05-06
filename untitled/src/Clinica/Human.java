@@ -1,10 +1,16 @@
-package Clinic;
+package Clinica;
 
 public class Human {
 
     public String name;
     public Integer age;
     public String sex;
+
+    public Human(String name, Integer age, String sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
 
     public String getName() {
         return name;

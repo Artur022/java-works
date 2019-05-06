@@ -1,9 +1,11 @@
-package Clinic;
+package Clinica;
 
 public class Pet implements Animal {
 
     public String name;
     public Integer age;
+    public String sex;
+    public TypeAnimal type;
 
     public Pet(String name, Integer age, String sex, TypeAnimal type) {
         this.name = name;
@@ -12,8 +14,7 @@ public class Pet implements Animal {
         this.type = type;
     }
 
-    public String sex;
-    public TypeAnimal type;
+
 
     @Override
     public String Sound() {
