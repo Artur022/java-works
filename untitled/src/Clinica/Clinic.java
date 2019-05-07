@@ -76,12 +76,14 @@ public class Clinic {
         }
     }
 
-    public List<Pacient> findPacient(String numCard) {
-        List<Pacient>  listPacients = new ArrayList<>();
+    public HashMap<Integer,Pacient> findPacient(String numCard) {
+        HashMap<Integer,Pacient>  listPacients = new HashMap<>();
+        int i = 0;
         for (Pacient pac:this.jurnalPacients.values()) {
             if (pac.getNumCard() == numCard) {
-                listPacients.add(pac);
+                listPacients.put(i,pac);
             }
+            i++;
         }
         return listPacients;
     }

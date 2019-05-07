@@ -1,5 +1,7 @@
 package Clinica;
 
+import java.util.HashMap;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -24,14 +26,18 @@ public class Main {
 
         System.out.println("Производится поиск всех клиентов с номером карты " + findPacientByNumCard + "!");
         System.out.println("...Поиск...");
-        Integer sizeFindList = myClinica.findPacient(findPacientByNumCard).size();
-        System.out.println("Найдено " + sizeClinic + " клиентов: ");
-
-        /*for (int i=0;i<=sizeFindList;i++) {
-            Pacient pacientFinders = myClinica.findPacient(findPacientByNumCard).get(i);
+        HashMap<Integer,Pacient> sizeFindList = myClinica.findPacient(findPacientByNumCard);
+        System.out.println("Найдено " + sizeFindList.size() + " клиент(ов): ");
+        Pacient pacientFinders = null;
+        for (int i=0;i<sizeFindList.size();i++) {
+            pacientFinders = sizeFindList.get(i);
             myClinica.swhAllInfPacient(pacientFinders);
         }
-        */
+
+        System.out.println("Удалим найденного клиента с numcard = " + findPacientByNumCard);
+        /*myClinica.delPacient(myClinica.getJurnalPacients().);*/
+
+
 
 
 
