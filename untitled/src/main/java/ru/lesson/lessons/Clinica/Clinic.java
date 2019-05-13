@@ -25,6 +25,12 @@ public class Clinic {
         return size;
     }
 
+    public Integer getCountPacients() {
+
+        return getJurnalPacients().size();
+
+    }
+
     public void setSize(Integer size) {
         this.size = size;
     }
@@ -40,20 +46,20 @@ public class Clinic {
 
     public void addPacient(Pacient pacient) {
         if (this.jurnalPacients.size()<this.size) {
-            this.jurnalPacients.put(this.jurnalPacients.size() + 1, pacient);
+            this.jurnalPacients.put(pacient.getNumCard(), pacient);
         } else {
             System.out.println("Error size");
         }
     }
 
-    public void delPacient(Integer id, Choose choose) throws Exception {
+    public void delPacient(Integer numCard, Choose choose) throws Exception {
         if (this.jurnalPacients.size()>0) {
             switch (choose) {
                 case PACIENT:
-                    this.jurnalPacients.remove(id);
+                    this.jurnalPacients.remove(numCard);
                     break;
                 case PET:
-                    this.jurnalPacients.get(id).setPet(null);
+                    this.jurnalPacients.get(numCard).setPet(null);
                     break;
                 default:
                     throw new Exception("Error choose" + choose);
@@ -61,23 +67,23 @@ public class Clinic {
         }
     }
 
-    public void editPacient(Integer id,Pacient pacient) {
+    public void editPacient(Integer numCard,Pacient pacient) {
         if (this.jurnalPacients.size()>0) {
-            if (this.jurnalPacients.containsKey(id)) {
+            if (this.jurnalPacients.containsKey(numCard)) {
                 /*this.jurnalPacients.replace(id,pacient);*/
             }
         }
     }
 
-    public void editPet(Integer id,Pet pet) {
+    public void editPet(Integer numCard,Pet pet) {
         if (this.jurnalPacients.size()>0) {
-            if (this.jurnalPacients.containsKey(id)) {
-                this.jurnalPacients.get(id).setPet(pet);
+            if (this.jurnalPacients.containsKey(numCard)) {
+                this.jurnalPacients.get(numCard).setPet(pet);
             }
         }
     }
 
-    public HashMap<Integer,Pacient> findPacient(String numCard) {
+    public HashMap<Integer,Pacient> findPacient(Integer numCard) {
         HashMap<Integer,Pacient>  listPacients = new HashMap<>();
         int i = 0;
         for (Pacient pac:this.jurnalPacients.values()) {

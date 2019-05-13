@@ -3,14 +3,14 @@ package ru.lesson.lessons.Clinica;
 public class Pacient extends Human{
 
         public Pet pet;
-        public String numCard;
+        public Integer numCard;
         public String adress;
 
     public Pacient(String name, Integer age, String sex) {
         super(name, age, sex);
     }
 
-    public Pacient(String name, Integer age, String sex, Pet pet, String numCard, String adress) {
+    public Pacient(String name, Integer age, String sex, Pet pet, Integer numCard, String adress) {
         super(name, age, sex);
         this.pet = pet;
         this.numCard = numCard;
@@ -25,11 +25,11 @@ public class Pacient extends Human{
         this.pet = pet;
     }
 
-    public String getNumCard() {
+    public Integer getNumCard() {
         return numCard;
     }
 
-    public void setNumCard(String numCard) {
+    public void setNumCard(Integer numCard) {
         this.numCard = numCard;
     }
 
