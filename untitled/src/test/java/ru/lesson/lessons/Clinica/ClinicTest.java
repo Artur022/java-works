@@ -23,4 +23,10 @@ public class ClinicTest {
         clinic.delPacient(1235123,Choose.PACIENT);
         Assert.assertEquals((Integer) 0,clinic.getCountPacients());
     }
+
+    @Test(expected = UserException.class)
+    public void setSize() throws UserException {
+        Clinic clinic = new Clinic("Lermant",20);
+        clinic.setSize(0);
+    }
 }

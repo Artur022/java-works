@@ -13,7 +13,14 @@ public class Main {
         Integer findPacientByNumCard = 1235123;
 
         System.out.println("Создается клиника - '" + nameClinic + "' ёё размерность - " + sizeClinic + " пациентов!");
+
         Clinic myClinica = new Clinic(nameClinic, sizeClinic);
+        try {
+            myClinica.setSize(0);
+        } catch (UserException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Введите корректную вместимость!");
+        }
 
 
         myClinica.addPacient(new Pacient("Артем",21,"М",new Dog("Lermant",19,"Ж", TypeAnimal.DOG),1235123,"Крутой дом"));

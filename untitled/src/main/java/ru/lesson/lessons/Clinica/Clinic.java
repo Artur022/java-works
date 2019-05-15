@@ -31,8 +31,18 @@ public class Clinic {
 
     }
 
-    public void setSize(Integer size) {
-        this.size = size;
+    /**
+     * Устанавливаем вместимость клиники
+     * @param size Размер
+     * @throws UserException Если размер <=0, выкидываем исключение.
+     */
+    public void setSize(Integer size) throws UserException {
+        if (size > 0) {
+            this.size = size;
+        } else {
+            throw new UserException("Размер клиники не может быть меньше 0");
+        }
+
     }
 
     public String getName() {
@@ -70,7 +80,7 @@ public class Clinic {
     public void editPacient(Integer numCard,Pacient pacient) {
         if (this.jurnalPacients.size()>0) {
             if (this.jurnalPacients.containsKey(numCard)) {
-                /*this.jurnalPacients.replace(id,pacient);*/
+                //this.jurnalPacients.replace(numCard,pacient);
             }
         }
     }
